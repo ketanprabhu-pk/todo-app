@@ -6,18 +6,21 @@ import Backdrop from './Backdrop';
 function Todo(props) {
 
 	const [modelIsOpen, setModelIsOpen] = useState(false);
-	function clickHandler() {
+	function clickModelHandler() {
 		setModelIsOpen(true);
+	}
+	function closeModelHandler() {
+		setModelIsOpen(false);
 	}
 	return (
 		<div className="card">
 			<h2>{props.title}</h2>
 			<span>{props.text}</span>
 			<div className="actions">
-				<button className="btn" onClick={clickHandler}>Delete</button>
+				<button className="btn" onClick={clickModelHandler}>Delete</button>
 			</div>
-			{modelIsOpen && <DeleteModel />}
-			{modelIsOpen && <Backdrop />}
+			{modelIsOpen && <DeleteModel onCancel={closeModelHandler} onConfirm={ } />}
+			{modelIsOpen && <Backdrop onCancel={closeModelHandler} />}
 		</div>
 	);
 }
