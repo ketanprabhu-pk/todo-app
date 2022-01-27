@@ -1,7 +1,13 @@
+import { useState } from 'react'
+
+import DeleteModel from './DeleteModel';
+import Backdrop from './Backdrop';
+
 function Todo(props) {
+
+	const [modelIsOpen, setModelIsOpen] = useState(false);
 	function clickHandler() {
-		// props.onClick(props.id);
-		console.log(props.title);
+		setModelIsOpen(true);
 	}
 	return (
 		<div className="card">
@@ -10,6 +16,8 @@ function Todo(props) {
 			<div className="actions">
 				<button className="btn" onClick={clickHandler}>Delete</button>
 			</div>
+			{modelIsOpen && <DeleteModel />}
+			{modelIsOpen && <Backdrop />}
 		</div>
 	);
 }

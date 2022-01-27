@@ -1,6 +1,6 @@
 function DeleteModel() {
 	return (
-		<div className="model">
+		<div className="modal">
 			<p>Are you sure you want to delete this item?</p>
 			<br />
 			<button className="btn btn-alt">Cancel</button>
