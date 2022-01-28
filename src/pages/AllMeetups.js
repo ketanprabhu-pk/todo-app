@@ -1,5 +1,5 @@
 function AllMeetups() {
-	return (<div>All Meetup Page</div>);
+	return (<div><h1>All Meetup Page</h1></div>);
 }
 
 export default AllMeetups;
